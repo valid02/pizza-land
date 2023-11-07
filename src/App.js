@@ -1,10 +1,14 @@
 import Header from "./components/Header/Header";
+import PizzalandSlogan from "./components/PizzalandSlogan/PizzalandSlogan";
 
 const App = () => {
   return (
-    <div>
+    <>
       <Header />
-    </div>
+      <main>
+        <PizzalandSlogan />
+      </main>
+    </>
   );
 }
 
