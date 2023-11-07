@@ -9,9 +9,10 @@
 
 html {
   font-family: vazir;
-  background: #fff;
+  direction: rtl;
 }
 
 body {
   margin: 0;
+  color: #fff;
 }
