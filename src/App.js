@@ -1,4 +1,5 @@
 import Header from "./components/Header/Header";
+import ListMenu from "./components/Menu/ListMenu";
 import PizzalandSlogan from "./components/PizzalandSlogan/PizzalandSlogan";
 
 const App = () => {
@@ -7,6 +8,7 @@ const App = () => {
       <Header />
       <main>
         <PizzalandSlogan />
+        <ListMenu />
       </main>
     </>
   );
