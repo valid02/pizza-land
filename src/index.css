@@ -1,8 +1,14 @@
+@font-face {
+  font-family: 'vazir';
+  src: local('vazir'), url('./fonts/Vazir.ttf') format('truetype');
+}
+
 * {
   box-sizing: border-box;
 }
 
 html {
+  font-family: vazir, sans-serif;
   direction: rtl;
 }
 
