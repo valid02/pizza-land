@@ -1,4 +1,5 @@
 import classes from './MealItem.module.css';
+import MealItemForm from './MealItemForm';
 
 const MealItem = props => {
   const toFarsiNumber = n => {
@@ -29,6 +30,9 @@ const MealItem = props => {
         <h3>{props.name}</h3>
         <p>{props.description}</p>
         <span className={classes.price}>{toFarsiNumber(separate(props.price))} تومان</span>
+      </div>
+      <div>
+        <MealItemForm id={props.id} />
       </div>
     </li>
   );
