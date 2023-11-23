@@ -1,3 +1,4 @@
+import { separateNumber, toFarsiNumber } from '../Helpers/Helpers';
 import Modal from '../UI/Modal';
 import classes from './Cart.module.css';
 
@@ -15,7 +16,7 @@ const Cart = props => {
       {cartItems}
       <div className={classes.total}>
         <span>هزینه کل</span>
-        <span>۳۵۰,۰۰۰</span>
+        <span>{toFarsiNumber(separateNumber(560000))} تومان</span>
       </div>
       <div className={classes.actions}>
         <button className={classes.button}>پرداخت</button>
