@@ -1,11 +1,18 @@
+import { useContext } from 'react';
 import { separateNumber, toFarsiNumber } from '../Helpers/Helpers';
 import Modal from '../UI/Modal';
 import classes from './Cart.module.css';
+import CartContext from '../../store/cart-context';
 
 const Cart = props => {
+  const cartCtx = useContext(CartContext);
+
+  const totalAmount = toFarsiNumber(separateNumber(cartCtx.totalAmount));
+  const hasItems = cartCtx.items.length > 0;
+
   const cartItems = (
     <ul className={classes['cart-items']}>
-      {[{ id: 'c1', name: 'سوشی', amount: 2, price: 12.99 }].map((item) => (
+      {cartCtx.items.map((item) => (
         <li>{item.name}</li>
       ))}
     </ul>
@@ -16,10 +23,10 @@ const Cart = props => {
       {cartItems}
       <div className={classes.total}>
         <span>هزینه کل</span>
-        <span>{toFarsiNumber(separateNumber(560000))} تومان</span>
+        <span>{totalAmount} تومان</span>
       </div>
       <div className={classes.actions}>
-        <button className={classes.button}>پرداخت</button>
+        {hasItems && <button className={classes.button}>پرداخت</button>}
         <button className={classes['button--alt']} onClick={props.onClose}>بستن</button>
       </div>
     </Modal>
