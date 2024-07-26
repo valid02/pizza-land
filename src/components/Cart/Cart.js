@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { separateNumber, toFarsiNumber } from '../Helpers/Helpers';
+import { separateNumber, toFarsiNumber } from '../../Helpers/Helpers';
 import Modal from '../UI/Modal';
 import classes from './Cart.module.css';
 import CartContext from '../../store/cart-context';

@@ -1,4 +1,4 @@
-import { separateNumber, toFarsiNumber } from '../Helpers/Helpers';
+import { separateNumber, toFarsiNumber } from '../../Helpers/Helpers';
 import classes from './CartItem.module.css';
 
 const CartItem = props => {
