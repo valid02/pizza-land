@@ -2,7 +2,7 @@ import classes from './MealItem.module.css';
 import MealItemForm from './MealItemForm';
 import { separateNumber, toFarsiNumber } from '../../../Helpers/Helpers';
 import { useContext } from 'react';
-import CartContext from '../../../store/cart-context';
+import CartContext from '../../../context/cart-context';
 
 const MealItem = props => {
   const cartCtx = useContext(CartContext);

@@ -1,11 +1,13 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { separateNumber, toFarsiNumber } from '../../Helpers/Helpers';
 import Modal from '../UI/Modal';
 import classes from './Cart.module.css';
-import CartContext from '../../store/cart-context';
+import CartContext from '../../context/cart-context';
 import CartItem from './CartItem';
+import OrderForm from './OrderForm';
 
 const Cart = props => {
+  const [isOrdering, setIsOrdering] = useState(false);
   const cartCtx = useContext(CartContext);
 
   const totalAmount = toFarsiNumber(separateNumber(cartCtx.totalAmount));
@@ -17,6 +19,10 @@ const Cart = props => {
 
   const cartItemAddHandler = item => {
     cartCtx.addItem({ ...item, amount: 1 });
+  }
+
+  const orderHandler = () => {
+    setIsOrdering(true);
   }
 
   const cartItems = (
@@ -34,6 +40,13 @@ const Cart = props => {
     </ul>
   );
 
+  const modalActions = (
+    <div className={classes.actions}>
+      {hasItems && <button className={classes.button} onClick={orderHandler}>تکمیل سفارش</button>}
+      <button className={classes['button--alt']} onClick={props.onClose}>بستن</button>
+    </div>
+  );
+
   return (
     <Modal onClose={props.onClose}>
       {cartItems}
@@ -41,10 +54,8 @@ const Cart = props => {
         <span>هزینه کل</span>
         <span>{totalAmount} تومان</span>
       </div>
-      <div className={classes.actions}>
-        {hasItems && <button className={classes.button}>پرداخت</button>}
-        <button className={classes['button--alt']} onClick={props.onClose}>بستن</button>
-      </div>
+      {isOrdering && <OrderForm onCancel={props.onClose} />}
+      {!isOrdering && modalActions}
     </Modal>
   );
 };
