@@ -1,31 +1,14 @@
 # Pizza Land
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Project Overview
-
-Pizza Land is a React-based web application that allows users to order pizzas online. Users can choose from a variety of pizzas, add them to a shopping cart, manage quantities, and view the total price of their order. This project is built using React and leverages Context API for state management.
+Pizza Land is a web application built with React that allows users to browse and order delicious pizzas online. Users can view a variety of pizzas, add them to their cart, and complete their purchase by entering their personal information.
 
 ## Features
 
-- **Pizza Selection:** Browse a list of delicious pizzas with detailed descriptions and prices.
-- **Shopping Cart:** Add pizzas to the cart, update quantities, or remove them entirely.
-- **Real-time Updates:** The cart and total cost update dynamically as items are added or removed.
-- **User Interface:** Simple and intuitive UI with a header, modal-based cart, and pizza list.
-
-## Project Structure
-
-- **`/src/components`**: Contains React components used throughout the app.
-  - **`/Cart`**: Components for displaying and managing the shopping cart.
-  - **`/Layout`**: Components for the header and layout.
-  - **`/Meals`**: Components for displaying available pizzas and meal summary.
-  - **`/UI`**: Reusable UI components such as modals and cards.
-
-- **`/src/store`**: Contains context and reducer logic for managing the cart state.
-
-- **`/src/assets`**: Stores static assets like images.
-
-- **`/src/helpers`**: Contains utility functions used throughout the application.
+- **Browse Pizzas**: View a list of available pizzas fetched from the server with descriptions and prices.
+- **Add to Cart**: Add pizzas to the shopping cart and adjust quantities as needed.
+- **Cart Management**: View and update the items in your cart, including the total cost.
+- **Checkout**: Enter personal information such as name, address, and mobile number to complete the purchase.
+- **Data Submission**: Send user information and order details to the server for processing.
 
 
 ## Available Scripts
