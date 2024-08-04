@@ -37,10 +37,12 @@ const OrderForm = props => {
     if (!formIsValid) {
       return;
     }
-
-    // submit data
     
-    
+    props.onConfirm({
+      name: enteredName,
+      address: enteredAddress,
+      phone: enteredPhone
+    });
   }
 
   const nameControlClasses = `${classes.control} ${formInputValidity.name ? '' : classes.invalid}`;
